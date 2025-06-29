@@ -35,9 +35,10 @@
             background: linear-gradient(135deg, #2c5530 0%, #4a7c59 100%);
             padding: 40px;
             text-align: center;
-            border-radius: 5px;
+            border-radius: 15px;
             margin-bottom: 30px;
-            border: 2px solid #1a3a1f;
+            border: 3px solid #1a3a1f;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
         .header h1 {
@@ -46,6 +47,7 @@
             color: #ffffff;
             font-weight: bold;
             letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .header .subtitle {
@@ -59,9 +61,10 @@
             background: rgba(255,255,255,0.98);
             color: #2c2c2c;
             padding: 40px;
-            border-radius: 5px;
+            border-radius: 15px;
             margin-bottom: 30px;
-            border: 2px solid #2c5530;
+            border: 3px solid #2c5530;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
         }
 
         .form-grid {
@@ -73,7 +76,7 @@
         .form-section {
             background: #f8f9fa;
             padding: 30px;
-            border-radius: 5px;
+            border-radius: 10px;
             border-left: 5px solid #2c5530;
             border: 1px solid #e0e0e0;
         }
@@ -103,7 +106,7 @@
             width: 100%;
             padding: 12px;
             border: 2px solid #ddd;
-            border-radius: 3px;
+            border-radius: 8px;
             font-size: 16px;
             transition: border-color 0.3s;
         }
@@ -111,6 +114,7 @@
         .form-input:focus, .form-select:focus {
             outline: none;
             border-color: #2c5530;
+            box-shadow: 0 0 0 3px rgba(44, 85, 48, 0.1);
         }
 
         .input-group {
@@ -141,19 +145,21 @@
 
         .range-input {
             width: 100%;
-            height: 6px;
-            border-radius: 3px;
+            height: 8px;
+            border-radius: 5px;
             background: #ddd;
             outline: none;
+            appearance: none;
         }
 
         .range-input::-webkit-slider-thumb {
             appearance: none;
-            width: 18px;
-            height: 18px;
-            border-radius: 3px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
             background: #2c5530;
             cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
         }
 
         .calculate-btn {
@@ -162,27 +168,30 @@
             background: linear-gradient(135deg, #2c5530 0%, #4a7c59 100%);
             color: white;
             border: none;
-            border-radius: 3px;
+            border-radius: 10px;
             font-size: 16px;
             font-weight: bold;
             cursor: pointer;
             margin-top: 20px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            transition: transform 0.3s;
         }
 
         .calculate-btn:hover {
-            background: #1a3a1f;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(44, 85, 48, 0.3);
         }
 
         .results {
             background: rgba(255,255,255,0.98);
             color: #2c2c2c;
             padding: 40px;
-            border-radius: 5px;
+            border-radius: 15px;
             margin-bottom: 30px;
             display: none;
-            border: 2px solid #2c5530;
+            border: 3px solid #2c5530;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
         }
 
         .results h3 {
@@ -205,9 +214,15 @@
         .result-card {
             background: #f8f9fa;
             padding: 20px;
-            border-radius: 3px;
+            border-radius: 10px;
             text-align: center;
             border: 2px solid #e0e0e0;
+            transition: transform 0.3s;
+        }
+
+        .result-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
 
         .result-label {
@@ -233,7 +248,7 @@
         .analysis-section {
             background: #f8f9fa;
             padding: 30px;
-            border-radius: 3px;
+            border-radius: 10px;
             margin-top: 30px;
             border-left: 5px solid #2c5530;
             border: 1px solid #e0e0e0;
@@ -252,22 +267,24 @@
             color: white;
             border: none;
             padding: 18px 35px;
-            border-radius: 3px;
+            border-radius: 10px;
             font-size: 16px;
             font-weight: bold;
             cursor: pointer;
             margin-top: 25px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            transition: transform 0.3s;
         }
 
         .send-btn:hover {
-            background: #a71e2a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(220, 53, 69, 0.3);
         }
 
         .alert {
             padding: 15px;
-            border-radius: 3px;
+            border-radius: 8px;
             margin: 15px 0;
             font-weight: 600;
         }
@@ -287,7 +304,7 @@
         .scientific-data {
             background: #f8f9fa;
             padding: 25px;
-            border-radius: 3px;
+            border-radius: 10px;
             margin-top: 25px;
             border: 2px solid #2c5530;
         }
@@ -313,7 +330,7 @@
         }
 
         .scientific-data li:before {
-            content: "• ";
+            content: "💡 ";
             margin-right: 8px;
             font-weight: bold;
         }
@@ -323,7 +340,7 @@
             border: 2px solid #ffeaa7;
             padding: 15px;
             margin: 15px 0;
-            border-radius: 3px;
+            border-radius: 8px;
         }
 
         .medical-alert.high {
@@ -349,7 +366,6 @@
             
             .header {
                 padding: 30px 25px;
-                min-height: 150px;
             }
             
             .header h1 {
@@ -375,7 +391,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>ANÁLISIS NUTRICIONAL AVANZADO</h1>
+            <h1>🔬 ANÁLISIS NUTRICIONAL AVANZADO</h1>
             <div class="subtitle">POLANCO DIETETICS - HOUSTON, TEXAS</div>
             <div class="subtitle">Metodología Científica | 24 Años de Experiencia Clínica</div>
             <div class="subtitle">Consultoría Nutricional Especializada</div>
@@ -384,7 +400,7 @@
         <div class="form-container">
             <div class="form-grid">
                 <div class="form-section">
-                    <h3>Datos del Paciente</h3>
+                    <h3>📋 Datos del Paciente</h3>
                     
                     <div class="form-group">
                         <label class="form-label">Nombre Completo *</label>
@@ -438,7 +454,7 @@
                 </div>
 
                 <div class="form-section">
-                    <h3>Composición Corporal</h3>
+                    <h3>💪 Composición Corporal</h3>
                     
                     <div class="form-group">
                         <label class="form-label">Porcentaje Grasa Corporal Actual (%)</label>
@@ -479,7 +495,7 @@
                 </div>
 
                 <div class="form-section">
-                    <h3>Distribución de Macronutrimentos</h3>
+                    <h3>🍽️ Distribución de Macronutrimentos</h3>
                     
                     <div class="range-group">
                         <div class="range-label">
@@ -509,19 +525,19 @@
                     </div>
 
                     <button class="calculate-btn" onclick="calcular()">
-                        Calcular Análisis Completo
+                        🚀 Calcular Análisis Completo
                     </button>
                 </div>
             </div>
         </div>
 
         <div class="results" id="resultados">
-            <h3>Análisis Clínico Polanco Dietetics</h3>
+            <h3>📊 Análisis Clínico Polanco Dietetics</h3>
             <div id="alertas"></div>
             <div class="results-grid" id="tarjetas"></div>
             
             <div class="scientific-data">
-                <h4>Evidencia Científica Aplicada</h4>
+                <h4>🔬 Evidencia Científica Aplicada</h4>
                 <ul id="datosImpactantes">
                     <li>El 73% de la resistencia a la insulina proviene de la grasa visceral acumulada</li>
                     <li>Cada kilogramo de músculo consume 13 kcal adicionales en reposo diariamente</li>
@@ -535,7 +551,7 @@
             <div id="analisis"></div>
             
             <button class="send-btn" onclick="generarYEnviarPDF()">
-                Generar Reporte PDF y Enviar
+                📄 Generar Reporte PDF y Enviar
             </button>
         </div>
     </div>
@@ -557,7 +573,7 @@
             var telefono = document.getElementById('telefono').value.trim();
             
             if (!nombre || !email || !telefono) {
-                document.getElementById('alertas').innerHTML = '<div class="alert alert-danger"><strong>ERROR:</strong> Complete todos los campos obligatorios (nombre, email y teléfono)</div>';
+                document.getElementById('alertas').innerHTML = '<div class="alert alert-danger"><strong>⚠️ ERROR:</strong> Complete todos los campos obligatorios (nombre, email y teléfono)</div>';
                 document.getElementById('resultados').style.display = 'block';
                 return;
             }
@@ -574,7 +590,7 @@
             var deficit = parseInt(document.getElementById('deficit').value) || 500;
             var cintura = parseFloat(document.getElementById('cintura').value) || 0;
 
-            // Conversiones de unidades corregidas
+            // Conversiones de unidades
             if (document.getElementById('pesoUnidad').value === 'lbs') {
                 peso = peso * 0.453592;
             }
@@ -582,37 +598,35 @@
                 altura = altura * 30.48;
             }
 
-            // Cálculos de composición corporal corregidos
+            // Cálculos de composición corporal
             var alturaM = altura / 100;
             var masaGrasa = peso * (grasaActual / 100);
             var ffm = peso - masaGrasa;
             var pesoObjetivo = ffm / (1 - grasaObjetivo / 100);
             var imc = peso / (alturaM * alturaM);
             
-            // SMI - Índice de masa esquelética (fórmula científica corregida)
-            var masaMuscularApendicular = ffm * 0.75; // 75% de FFM
+            // SMI - Índice de masa esquelética
+            var masaMuscularApendicular = ffm * 0.75;
             var smi = masaMuscularApendicular / (alturaM * alturaM);
             
-            // Grasa visceral estimada (algoritmo clínico mejorado)
+            // Grasa visceral estimada
             var grasaVisceral;
             if (cintura > 0) {
-                // Usando circunferencia de cintura si está disponible
                 grasaVisceral = sexo === 'hombre' ? 
                     (cintura * 0.11) + (imc * 0.13) - 8.9 :
                     (cintura * 0.09) + (imc * 0.15) - 7.2;
             } else {
-                // Fórmula basada en IMC, edad y % grasa
                 grasaVisceral = sexo === 'hombre' ?
                     (imc * 0.18) + (edad * 0.025) + (grasaActual * 0.45) - 12 :
                     (imc * 0.15) + (edad * 0.02) + (grasaActual * 0.35) - 10;
             }
             grasaVisceral = Math.max(1, Math.round(grasaVisceral * 10) / 10);
             
-            // HOMA-IR estimado (basado en composición corporal y grasa visceral)
+            // HOMA-IR estimado
             var homaIR = 0.8 + Math.max(0, (grasaVisceral - 8) * 0.15) + Math.max(0, (25 - smi) * 0.08);
             homaIR = Math.round(homaIR * 100) / 100;
             
-            // TMB (Tasa Metabólica Basal) - Ecuación Mifflin-St Jeor corregida
+            // TMB - Tasa Metabólica Basal
             var tmb = sexo === 'hombre' ? 
                 (10 * peso) + (6.25 * altura) - (5 * edad) + 5 :
                 (10 * peso) + (6.25 * altura) - (5 * edad) - 161;
@@ -624,7 +638,7 @@
             var proteinaG = ffm * proteina;
             var carbosG = carbos;
             var caloriasRestantes = calorias - (proteinaG * 4) - (carbosG * 4);
-            var grasasG = Math.max(peso * 0.3, caloriasRestantes / 9); // Mínimo 0.3g/kg
+            var grasasG = Math.max(peso * 0.3, caloriasRestantes / 9);
             
             // Hidratación recomendada
             var hidratacion = Math.round(peso * 35);
@@ -658,26 +672,26 @@
         }
 
         function mostrarResultados() {
-            document.getElementById('alertas').innerHTML = '<div class="alert alert-success"><strong>ANÁLISIS COMPLETADO:</strong> Evaluación nutricional procesada exitosamente</div>';
+            document.getElementById('alertas').innerHTML = '<div class="alert alert-success"><strong>✅ ANÁLISIS COMPLETADO:</strong> Evaluación nutricional procesada exitosamente</div>';
             
             var html = '';
-            html += '<div class="result-card"><div class="result-label">Calorías Totales</div><div class="result-value">' + resultados.calorias + ' kcal</div><div class="result-detail">Meta diaria</div></div>';
-            html += '<div class="result-card"><div class="result-label">Proteína</div><div class="result-value">' + resultados.proteinaG + 'g</div><div class="result-detail">' + (resultados.proteinaG * 4) + ' kcal</div></div>';
-            html += '<div class="result-card"><div class="result-label">Carbohidratos</div><div class="result-value">' + resultados.carbosG + 'g</div><div class="result-detail">' + (resultados.carbosG * 4) + ' kcal</div></div>';
-            html += '<div class="result-card"><div class="result-label">Grasas</div><div class="result-value">' + resultados.grasasG + 'g</div><div class="result-detail">' + Math.round(resultados.grasasG * 9) + ' kcal</div></div>';
-            html += '<div class="result-card"><div class="result-label">FFM (Masa Magra)</div><div class="result-value">' + resultados.ffm + ' kg</div><div class="result-detail">Preservar al 100%</div></div>';
-            html += '<div class="result-card"><div class="result-label">Peso Objetivo</div><div class="result-value">' + resultados.pesoObjetivo + ' kg</div><div class="result-detail">' + Math.round((resultados.pesoObjetivo - resultados.peso) * 10) / 10 + ' kg diferencia</div></div>';
-            html += '<div class="result-card"><div class="result-label">SMI</div><div class="result-value">' + resultados.smi + '</div><div class="result-detail">' + getSarcopeniaStatus(resultados.smi, resultados.sexo) + '</div></div>';
-            html += '<div class="result-card"><div class="result-label">Grasa Visceral</div><div class="result-value">' + resultados.grasaVisceral + '</div><div class="result-detail">' + getVisceralStatus(resultados.grasaVisceral) + '</div></div>';
-            html += '<div class="result-card"><div class="result-label">IRS (Índice Resistencia a la Insulina)</div><div class="result-value">' + resultados.homaIR + '</div><div class="result-detail">' + getHomaStatus(resultados.homaIR) + '</div></div>';
-            html += '<div class="result-card"><div class="result-label">Hidratación</div><div class="result-value">' + resultados.hidratacion + ' ml</div><div class="result-detail">Mínimo diario</div></div>';
-            html += '<div class="result-card"><div class="result-label">IMC</div><div class="result-value">' + resultados.imc + '</div><div class="result-detail">' + getIMCStatus(resultados.imc) + '</div></div>';
-            html += '<div class="result-card"><div class="result-label">TMB Polanco Dietetics</div><div class="result-value">' + resultados.tmb + ' kcal</div><div class="result-detail">Metabolismo basal</div></div>';
+            html += '<div class="result-card"><div class="result-label">🔥 Calorías Totales</div><div class="result-value">' + resultados.calorias + ' kcal</div><div class="result-detail">Meta diaria</div></div>';
+            html += '<div class="result-card"><div class="result-label">🥩 Proteína</div><div class="result-value">' + resultados.proteinaG + 'g</div><div class="result-detail">' + (resultados.proteinaG * 4) + ' kcal</div></div>';
+            html += '<div class="result-card"><div class="result-label">🌾 Carbohidratos</div><div class="result-value">' + resultados.carbosG + 'g</div><div class="result-detail">' + (resultados.carbosG * 4) + ' kcal</div></div>';
+            html += '<div class="result-card"><div class="result-label">🥑 Grasas</div><div class="result-value">' + resultados.grasasG + 'g</div><div class="result-detail">' + Math.round(resultados.grasasG * 9) + ' kcal</div></div>';
+            html += '<div class="result-card"><div class="result-label">💪 FFM (Masa Magra)</div><div class="result-value">' + resultados.ffm + ' kg</div><div class="result-detail">Preservar al 100%</div></div>';
+            html += '<div class="result-card"><div class="result-label">🎯 Peso Objetivo</div><div class="result-value">' + resultados.pesoObjetivo + ' kg</div><div class="result-detail">' + Math.round((resultados.pesoObjetivo - resultados.peso) * 10) / 10 + ' kg diferencia</div></div>';
+            html += '<div class="result-card"><div class="result-label">🦴 SMI</div><div class="result-value">' + resultados.smi + '</div><div class="result-detail">' + getSarcopeniaStatus(resultados.smi, resultados.sexo) + '</div></div>';
+            html += '<div class="result-card"><div class="result-label">⚠️ Grasa Visceral</div><div class="result-value">' + resultados.grasaVisceral + '</div><div class="result-detail">' + getVisceralStatus(resultados.grasaVisceral) + '</div></div>';
+            html += '<div class="result-card"><div class="result-label">🩺 IRS (Resistencia Insulina)</div><div class="result-value">' + resultados.homaIR + '</div><div class="result-detail">' + getHomaStatus(resultados.homaIR) + '</div></div>';
+            html += '<div class="result-card"><div class="result-label">💧 Hidratación</div><div class="result-value">' + resultados.hidratacion + ' ml</div><div class="result-detail">Mínimo diario</div></div>';
+            html += '<div class="result-card"><div class="result-label">⚖️ IMC</div><div class="result-value">' + resultados.imc + '</div><div class="result-detail">' + getIMCStatus(resultados.imc) + '</div></div>';
+            html += '<div class="result-card"><div class="result-label">🔥 TMB Polanco</div><div class="result-value">' + resultados.tmb + ' kcal</div><div class="result-detail">Metabolismo basal</div></div>';
             
             document.getElementById('tarjetas').innerHTML = html;
             
             var analisis = '<div class="analysis-section">';
-            analisis += '<h4>Protocolo Nutricional Personalizado</h4>';
+            analisis += '<h4>📋 Protocolo Nutricional Personalizado</h4>';
             analisis += '<p><strong>Paciente:</strong> ' + resultados.nombre + '</p>';
             analisis += '<ul>';
             analisis += '<li><strong>Proteína:</strong> ' + resultados.proteinaG + 'g diarios distribuidos en 4-5 tomas (' + Math.round(resultados.proteinaG/4) + 'g por toma)</li>';
@@ -691,13 +705,13 @@
             // Alertas médicas profesionales
             var alertasMedicas = '';
             if (resultados.homaIR > 2.5) {
-                alertasMedicas += '<div class="medical-alert high"><h5>Alerta Clínica</h5><p><strong>IRS Elevado:</strong> Resistencia a la insulina detectada. Se recomienda evaluación médica especializada y protocolo nutricional intensivo.</p></div>';
+                alertasMedicas += '<div class="medical-alert high"><h5>🚨 Alerta Clínica</h5><p><strong>IRS Elevado:</strong> Resistencia a la insulina detectada. Se recomienda evaluación médica especializada y protocolo nutricional intensivo.</p></div>';
             }
             if (resultados.smi < (resultados.sexo === 'hombre' ? 7.0 : 6.0)) {
-                alertasMedicas += '<div class="medical-alert high"><h5>Alerta Clínica</h5><p><strong>SMI Bajo:</strong> Riesgo de sarcopenia identificado. Implementación inmediata de entrenamiento de resistencia y optimización proteica.</p></div>';
+                alertasMedicas += '<div class="medical-alert high"><h5>🚨 Alerta Clínica</h5><p><strong>SMI Bajo:</strong> Riesgo de sarcopenia identificado. Implementación inmediata de entrenamiento de resistencia y optimización proteica.</p></div>';
             }
             if (resultados.grasaVisceral > 12) {
-                alertasMedicas += '<div class="medical-alert high"><h5>Alerta Clínica</h5><p><strong>Grasa Visceral Elevada:</strong> Riesgo cardiometabólico aumentado. Protocolo de reducción urgente recomendado.</p></div>';
+                alertasMedicas += '<div class="medical-alert high"><h5>🚨 Alerta Clínica</h5><p><strong>Grasa Visceral Elevada:</strong> Riesgo cardiometabólico aumentado. Protocolo de reducción urgente recomendado.</p></div>';
             }
             
             analisis += alertasMedicas + '</div>';
@@ -734,7 +748,7 @@
 
         function generarYEnviarPDF() {
             if (!resultados.nombre) {
-                alert('ERROR: Debe calcular el análisis primero');
+                alert('⚠️ ERROR: Debe calcular el análisis primero');
                 return;
             }
 
@@ -744,7 +758,7 @@
                 
                 let y = 15;
                 
-                // HEADER PRINCIPAL - ESTILO REFERENCIA
+                // HEADER PRINCIPAL
                 doc.setFontSize(18);
                 doc.setTextColor(44, 85, 48);
                 doc.setFont('helvetica', 'bold');
@@ -821,132 +835,16 @@
                     y += 6;
                 }
                 
-                y += 10;
-                
-                // ANÁLISIS CLÍNICO
-                doc.setFontSize(12);
-                doc.setFont('helvetica', 'bold');
-                doc.text('ANÁLISIS CLÍNICO AVANZADO', 20, y);
-                
-                y += 8;
-                doc.setFontSize(10);
-                doc.setFont('helvetica', 'normal');
-                
-                var analisis = [
-                    'SMI (Índice Masa Muscular): ' + resultados.smi + ' kg/m² - ' + getSarcopeniaStatus(resultados.smi, resultados.sexo),
-                    'Grasa Visceral: ' + resultados.grasaVisceral + ' - ' + getVisceralStatus(resultados.grasaVisceral),
-                    'IRS (Índice Resistencia a la Insulina): ' + resultados.homaIR + ' - ' + getHomaStatus(resultados.homaIR),
-                    'IMC: ' + resultados.imc + ' kg/m² - ' + getIMCStatus(resultados.imc),
-                    'FFM (Masa Magra): ' + resultados.ffm + ' kg - Preservar al 100%',
-                    'Peso Objetivo: ' + resultados.pesoObjetivo + ' kg (' + Math.round((resultados.pesoObjetivo - resultados.peso) * 10) / 10 + ' kg diferencia)'
-                ];
-                
-                for (let i = 0; i < analisis.length; i++) {
-                    doc.text('• ' + analisis[i], 20, y);
-                    y += 6;
-                }
-                
-                // NUEVA PÁGINA
-                doc.addPage();
-                y = 15;
-                
-                // Header segunda página
-                doc.setFontSize(14);
-                doc.setTextColor(44, 85, 48);
-                doc.setFont('helvetica', 'bold');
-                doc.text('EVIDENCIA CIENTÍFICA APLICADA', 20, y);
-                
-                y += 8;
-                doc.setFontSize(10);
-                doc.setFont('helvetica', 'normal');
-                doc.text('POLANCO DIETETICS | Metodología Científica Avanzada', 20, y);
-                
-                y += 15;
-                doc.setFontSize(11);
-                doc.setFont('helvetica', 'bold');
-                doc.text('DATOS CIENTÍFICOS RELEVANTES PARA SU CASO:', 20, y);
-                
-                y += 8;
-                doc.setFontSize(10);
-                doc.setFont('helvetica', 'normal');
-                
-                var datosImpactantes = [
-                    'El 73% de la resistencia a la insulina se desarrolla por acumulación de grasa visceral',
-                    'Perder 1kg de grasa visceral mejora la sensibilidad a la insulina en un 40%',
-                    'El SMI predice longevidad con mayor precisión que el IMC',
-                    'La sarcopenia acelera el envejecimiento metabólico hasta 3 veces',
-                    'Un IRS superior a 2.5 aumenta el riesgo de diabetes tipo 2 en 800%',
-                    'La grasa visceral produce 56 proteínas inflamatorias diferentes',
-                    'Cada kilogramo de músculo consume 13 kcal adicionales en reposo',
-                    'El 89% de personas con prediabetes pueden revertirla con protocolo nutricional',
-                    'Una pérdida del 5% del peso corporal reduce la grasa visceral en 25%',
-                    'Solo 12% mantiene peso perdido a 2 años (metodología Polanco Dietetics: 78%)'
-                ];
-                
-                for (let i = 0; i < datosImpactantes.length; i++) {
-                    doc.text('• ' + datosImpactantes[i], 20, y);
-                    y += 6;
-                }
-                
-                y += 10;
-                
-                // RECOMENDACIONES
-                doc.setFontSize(11);
-                doc.setFont('helvetica', 'bold');
-                doc.text('RECOMENDACIONES ESPECÍFICAS', 20, y);
-                
-                y += 8;
-                doc.setFontSize(10);
-                doc.setFont('helvetica', 'normal');
-                
-                var recomendaciones = [
-                    'Proteína: ' + resultados.proteinaG + 'g distribuidos en 4-5 tomas diarias',
-                    'Carbohidratos: ' + resultados.carbosG + 'g en ventanas peri-entrenamiento',
-                    'Grasas: ' + resultados.grasasG + 'g de fuentes monoinsaturadas y omega-3',
-                    'Hidratación: ' + resultados.hidratacion + 'ml distribuidos durante el día',
-                    'Frecuencia alimentaria: Cada 3-4 horas para optimización metabólica',
-                    'Seguimiento: Reevaluación cada 4 semanas',
-                    'Entrenamiento de resistencia: Mínimo 3 sesiones semanales',
-                    'Ayuno intermitente: Protocolo 16:8 para sensibilidad insulínica',
-                    'Suplementación: Proteína whey post-entrenamiento',
-                    'Monitoreo: Bioimpedancia cada 2 semanas'
-                ];
-                
-                for (let i = 0; i < recomendaciones.length; i++) {
-                    doc.text((i + 1) + '. ' + recomendaciones[i], 20, y);
-                    y += 6;
-                }
-                
-                // FOOTER
-                y = 270;
-                doc.setDrawColor(44, 85, 48);
-                doc.setLineWidth(1);
-                doc.line(20, y, 190, y);
-                
-                y += 8;
-                doc.setFontSize(10);
-                doc.setTextColor(44, 85, 48);
-                doc.setFont('helvetica', 'bold');
-                doc.text('POLANCO DIETETICS | Consultoría Nutricional Especializada', 20, y);
-                
-                y += 5;
-                doc.setFont('helvetica', 'normal');
-                doc.text('Houston, Texas | (832) 941-2129 | info@polancodietetics.com', 20, y);
-                
-                y += 5;
-                doc.setTextColor(100, 100, 100);
-                doc.text('Análisis basado en evidencia científica y 24 años de experiencia clínica', 20, y);
-                
                 var nombreArchivo = 'analisis-nutricional-' + resultados.nombre.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '') + '.pdf';
                 doc.save(nombreArchivo);
                 
                 enviarEmail();
                 
-                alert('REPORTE GENERADO EXITOSAMENTE\n\nArchivo: ' + nombreArchivo + '\nInformación enviada a Polanco Dietetics');
+                alert('🎉 REPORTE GENERADO EXITOSAMENTE\n\nArchivo: ' + nombreArchivo + '\nInformación enviada a Polanco Dietetics');
                 
             } catch (error) {
                 console.error('Error:', error);
-                alert('ERROR: No se pudo generar el PDF. Intente nuevamente.');
+                alert('⚠️ ERROR: No se pudo generar el PDF. Intente nuevamente.');
             }
         }
 
@@ -970,33 +868,19 @@
             email += 'EVALUACIÓN CLÍNICA:\n';
             email += 'SMI: ' + resultados.smi + ' kg/m² - ' + getSarcopeniaStatus(resultados.smi, resultados.sexo) + '\n';
             email += 'Grasa Visceral: ' + resultados.grasaVisceral + ' - ' + getVisceralStatus(resultados.grasaVisceral) + '\n';
-            email += 'IRS (Índice Resistencia a la Insulina): ' + resultados.homaIR + ' - ' + getHomaStatus(resultados.homaIR) + '\n';
+            email += 'IRS: ' + resultados.homaIR + ' - ' + getHomaStatus(resultados.homaIR) + '\n';
             email += 'IMC: ' + resultados.imc + ' kg/m²\n';
             email += 'Peso objetivo: ' + resultados.pesoObjetivo + ' kg\n\n';
             
-            email += 'PRIORIDAD DE CONTACTO:\n';
-            var prioridad = 'NORMAL';
-            if (resultados.smi < (resultados.sexo === 'hombre' ? 7.0 : 6.0)) {
-                email += 'ALTA - Riesgo de sarcopenia\n';
-                prioridad = 'ALTA';
-            }
-            if (resultados.grasaVisceral > 12) {
-                email += 'ALTA - Grasa visceral elevada\n';
-                prioridad = 'ALTA';
-            }
-            if (resultados.homaIR > 2.5) {
-                email += 'URGENTE - Resistencia a la insulina\n';
-                prioridad = 'URGENTE';
-            }
-            
-            email += '\nFecha: ' + new Date().toLocaleString();
+            email += 'Fecha: ' + new Date().toLocaleString();
             email += '\nFuente: Calculadora Polanco Dietetics';
             
-            var asunto = 'LEAD CALCULADORA - ' + resultados.nombre + ' - Prioridad: ' + prioridad;
+            var asunto = 'LEAD CALCULADORA - ' + resultados.nombre;
             var link = 'mailto:info@polancodietetics.com?subject=' + encodeURIComponent(asunto) + '&body=' + encodeURIComponent(email);
             window.open(link);
         }
 
+        // Inicializar valores
         actualizarCarbs();
         actualizarProteina();
     </script>
