@@ -879,8 +879,219 @@
             var link = 'mailto:info@polancodietetics.com?subject=' + encodeURIComponent(asunto) + '&body=' + encodeURIComponent(email);
             window.open(link);
         }
+function generarYEnviarPDF() {
+    if (!resultados.nombre) {
+        alert('ERROR: Debe calcular el análisis primero');
+        return;
+    }
 
-        // Inicializar valores
+    try {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+        
+        let y = 15;
+        
+        // HEADER ESTILO SOFIA PRO - CONTENIDO POLANCO
+        doc.setFontSize(20);
+        doc.setTextColor(44, 85, 48);
+        doc.setFont('helvetica', 'bold');
+        doc.text('POLANCO DIETETICS', 20, y);
+        
+        y += 8;
+        doc.setFontSize(12);
+        doc.setTextColor(44, 85, 48);
+        doc.setFont('helvetica', 'normal');
+        doc.text('Análisis Nutricional Científico de Precisión', 20, y);
+        
+        y += 6;
+        doc.setFontSize(10);
+        doc.setTextColor(44, 85, 48);
+        doc.text('Houston, Texas | (832) 941-2129 | info@polancodietetics.com', 20, y);
+        
+        y += 15;
+        
+        // INFORMACIÓN DEL PACIENTE
+        doc.setFontSize(12);
+        doc.setTextColor(44, 85, 48);
+        doc.setFont('helvetica', 'bold');
+        doc.text('INFORMACIÓN DEL PACIENTE', 20, y);
+        
+        y += 8;
+        doc.setFontSize(10);
+        doc.setTextColor(0, 0, 0);
+        doc.setFont('helvetica', 'normal');
+        doc.text('Nombre: ' + resultados.nombre, 20, y);
+        y += 5;
+        doc.text('Email: ' + resultados.email, 20, y);
+        y += 5;
+        doc.text('Teléfono: ' + resultados.telefono, 20, y);
+        y += 5;
+        doc.text('Edad: ' + resultados.edad + ' años', 20, y);
+        y += 5;
+        doc.text('Sexo: ' + resultados.sexo, 20, y);
+        y += 5;
+        doc.text('Peso: ' + resultados.peso + ' kg', 20, y);
+        
+        y += 15;
+        
+        // PLAN NUTRICIONAL PERSONALIZADO
+        doc.setFontSize(12);
+        doc.setTextColor(44, 85, 48);
+        doc.setFont('helvetica', 'bold');
+        doc.text('PLAN NUTRICIONAL PERSONALIZADO', 20, y);
+        
+        y += 10;
+        doc.setFontSize(11);
+        doc.setTextColor(44, 85, 48);
+        doc.setFont('helvetica', 'bold');
+        doc.text('CALORÍAS TOTALES: ' + resultados.calorias + ' kcal/día', 20, y);
+        
+        y += 8;
+        doc.setFontSize(10);
+        doc.setTextColor(0, 0, 0);
+        doc.setFont('helvetica', 'normal');
+        
+        doc.text('• Proteína: ' + resultados.proteinaG + 'g = ' + (resultados.proteinaG * 4) + ' kcal (' + Math.round((resultados.proteinaG * 4 / resultados.calorias) * 100) + '%)', 20, y);
+        y += 6;
+        doc.text('• Carbohidratos: ' + resultados.carbosG + 'g = ' + (resultados.carbosG * 4) + ' kcal (' + Math.round((resultados.carbosG * 4 / resultados.calorias) * 100) + '%)', 20, y);
+        y += 6;
+        doc.text('• Grasas: ' + resultados.grasasG + 'g = ' + Math.round(resultados.grasasG * 9) + ' kcal (' + Math.round((resultados.grasasG * 9 / resultados.calorias) * 100) + '%)', 20, y);
+        y += 6;
+        doc.text('• Hidratación: ' + resultados.hidratacion + ' ml diarios mínimo', 20, y);
+        
+        y += 15;
+        
+        // ANÁLISIS CLÍNICO AVANZADO
+        doc.setFontSize(12);
+        doc.setTextColor(44, 85, 48);
+        doc.setFont('helvetica', 'bold');
+        doc.text('ANÁLISIS CLÍNICO AVANZADO', 20, y);
+        
+        y += 8;
+        doc.setFontSize(10);
+        doc.setTextColor(0, 0, 0);
+        doc.setFont('helvetica', 'normal');
+        
+        doc.text('• SMI (Índice Masa Muscular): ' + resultados.smi + ' kg/m² - ' + getSarcopeniaStatus(resultados.smi, resultados.sexo), 20, y);
+        y += 6;
+        doc.text('• Grasa Visceral: ' + resultados.grasaVisceral + ' - ' + getVisceralStatus(resultados.grasaVisceral), 20, y);
+        y += 6;
+        doc.text('• IRS (Índice Resistencia a la Insulina): ' + resultados.homaIR + ' - ' + getHomaStatus(resultados.homaIR), 20, y);
+        y += 6;
+        doc.text('• IMC: ' + resultados.imc + ' kg/m² - ' + getIMCStatus(resultados.imc), 20, y);
+        y += 6;
+        doc.text('• FFM (Masa Magra): ' + resultados.ffm + ' kg - Preservar al 100%', 20, y);
+        y += 6;
+        doc.text('• Peso Objetivo: ' + resultados.pesoObjetivo + ' kg (' + Math.round((resultados.pesoObjetivo - resultados.peso) * 10) / 10 + ' kg diferencia)', 20, y);
+        
+        // NUEVA PÁGINA
+        doc.addPage();
+        y = 15;
+        
+        // HEADER SEGUNDA PÁGINA
+        doc.setFontSize(12);
+        doc.setTextColor(44, 85, 48);
+        doc.setFont('helvetica', 'bold');
+        doc.text('EVIDENCIA CIENTÍFICA APLICADA', 20, y);
+        
+        y += 8;
+        doc.setFontSize(10);
+        doc.setTextColor(44, 85, 48);
+        doc.setFont('helvetica', 'normal');
+        doc.text('POLANCO DIETETICS | Metodología Científica Avanzada', 20, y);
+        
+        y += 15;
+        doc.setFontSize(11);
+        doc.setTextColor(44, 85, 48);
+        doc.setFont('helvetica', 'bold');
+        doc.text('DATOS CIENTÍFICOS RELEVANTES PARA SU CASO:', 20, y);
+        
+        y += 8;
+        doc.setFontSize(10);
+        doc.setTextColor(0, 0, 0);
+        doc.setFont('helvetica', 'normal');
+        
+        var datosImpactantes = [
+            'El 73% de la resistencia a la insulina se desarrolla por acumulación de grasa visceral',
+            'Perder 1kg de grasa visceral mejora la sensibilidad a la insulina en un 40%',
+            'El SMI predice longevidad con mayor precisión que el IMC',
+            'La sarcopenia acelera el envejecimiento metabólico hasta 3 veces',
+            'Un IRS superior a 2.5 aumenta el riesgo de diabetes tipo 2 en 800%',
+            'La grasa visceral produce 56 proteínas inflamatorias diferentes',
+            'Cada kilogramo de músculo consume 13 kcal adicionales en reposo',
+            'El 89% de personas con prediabetes pueden revertirla con protocolo nutricional',
+            'Una pérdida del 5% del peso corporal reduce la grasa visceral en 25%',
+            'Solo 12% mantiene peso perdido a 2 años (metodología Polanco Dietetics: 78%)'
+        ];
+        
+        for (let i = 0; i < datosImpactantes.length; i++) {
+            doc.text('• ' + datosImpactantes[i], 20, y);
+            y += 6;
+        }
+        
+        y += 10;
+        
+        // RECOMENDACIONES ESPECÍFICAS
+        doc.setFontSize(11);
+        doc.setTextColor(44, 85, 48);
+        doc.setFont('helvetica', 'bold');
+        doc.text('RECOMENDACIONES ESPECÍFICAS', 20, y);
+        
+        y += 8;
+        doc.setFontSize(10);
+        doc.setTextColor(0, 0, 0);
+        doc.setFont('helvetica', 'normal');
+        
+        var recomendaciones = [
+            'Proteína: ' + resultados.proteinaG + 'g distribuidos en 4-5 tomas diarias',
+            'Carbohidratos: ' + resultados.carbosG + 'g en ventanas peri-entrenamiento',
+            'Grasas: ' + resultados.grasasG + 'g de fuentes monoinsaturadas y omega-3',
+            'Hidratación: ' + resultados.hidratacion + 'ml distribuidos durante el día',
+            'Frecuencia alimentaria: Cada 3-4 horas para optimización metabólica',
+            'Seguimiento: Reevaluación cada 4 semanas',
+            'Entrenamiento de resistencia: Mínimo 3 sesiones semanales',
+            'Ayuno intermitente: Protocolo 16:8 para sensibilidad insulínica',
+            'Suplementación: Proteína whey post-entrenamiento',
+            'Monitoreo: Bioimpedancia cada 2 semanas'
+        ];
+        
+        for (let i = 0; i < recomendaciones.length; i++) {
+            doc.text((i + 1) + '. ' + recomendaciones[i], 20, y);
+            y += 6;
+        }
+        
+        // FOOTER PROFESIONAL
+        y = 270;
+        doc.setDrawColor(44, 85, 48);
+        doc.setLineWidth(1);
+        doc.line(20, y, 190, y);
+        
+        y += 8;
+        doc.setFontSize(10);
+        doc.setTextColor(44, 85, 48);
+        doc.setFont('helvetica', 'bold');
+        doc.text('POLANCO DIETETICS | Consultoría Nutricional Especializada', 20, y);
+        
+        y += 5;
+        doc.setFont('helvetica', 'normal');
+        doc.text('Houston, Texas | (832) 941-2129 | info@polancodietetics.com', 20, y);
+        
+        y += 5;
+        doc.setTextColor(100, 100, 100);
+        doc.text('Análisis basado en evidencia científica y 24 años de experiencia clínica', 20, y);
+        
+        var nombreArchivo = 'analisis-nutricional-polanco-dietetics.pdf';
+        doc.save(nombreArchivo);
+        
+        enviarEmail();
+        
+        alert('REPORTE GENERADO: ' + nombreArchivo);
+        
+    } catch (error) {
+        console.error('Error:', error);
+        alert('ERROR: No se pudo generar el PDF');
+    }
+}        // Inicializar valores
         actualizarCarbs();
         actualizarProteina();
     </script>
